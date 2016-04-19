@@ -22,10 +22,6 @@ pastDate y m d = do
 calcTax :: Float -> Float
 calcTax i = i * taxRate
 
---verifyCard :: Integer -> Integer -> Int -> Int -> Bool
---verifyCard cardNum y m d = ((cardType cardNum) /= "Not accepted")
---                           && (pastDate y m d)
-
 verifyCard :: Integer -> Integer -> Int -> Int -> IO Bool
 verifyCard cardNum y m d = do
   exp <- pastDate y m d
